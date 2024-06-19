@@ -5,6 +5,7 @@ from flask import Flask, request
 from flask_jsonpify import jsonpify
 import pickle
 import pandas as pd
+import urllib
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def hello_world():
 @app.route('/find')
 def find():
     # transform query from user
-    file = open('https://drive.google.com/file/d/1K8vDPAn_xtPDa1zWWBLKN4nPt4524YvA/view?usp=sharing','rb')
+    file = urllib.urlopen('https://drive.google.com/file/d/1K8vDPAn_xtPDa1zWWBLKN4nPt4524YvA/view?usp=sharing').read()
     model = pickle.load(file)
     file.close()
     q = request.args.get('q')
