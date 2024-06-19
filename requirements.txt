@@ -1,4 +1,3 @@
 Flask
 gunicorn
 flask_jsonpify
-sentence_transformers
