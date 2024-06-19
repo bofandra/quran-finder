@@ -5,6 +5,7 @@ from flask import Flask, request
 from flask_jsonpify import jsonpify
 import pickle
 import pandas as pd
+from sentence_transformers import SentenceTransformer
 
 app = Flask(__name__)
 
@@ -16,7 +17,6 @@ def hello_world():
 def find():
     # transform query from user
     q = request.args.get('q')
-    from sentence_transformers import SentenceTransformer
     model = SentenceTransformer('use-cmlm-multilingual')
     encoded_query_text = model.encode(q)
     print(q)
