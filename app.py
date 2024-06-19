@@ -15,7 +15,7 @@ def hello_world():
 @app.route('/find')
 def find():
     # transform query from user
-    file = open('use-cmlm-multilingual.sav','rb')
+    file = open('https://drive.google.com/file/d/1K8vDPAn_xtPDa1zWWBLKN4nPt4524YvA/view?usp=sharing','rb')
     model = pickle.load(file)
     file.close()
     q = request.args.get('q')
