@@ -16,7 +16,7 @@ def hello_world():
 @app.route('/find')
 def find():
     # transform query from user
-    file = urllib.urlopen('https://drive.google.com/file/d/1K8vDPAn_xtPDa1zWWBLKN4nPt4524YvA/view?usp=sharing').read()
+    file = urllib.request.urlopen('https://drive.google.com/file/d/1K8vDPAn_xtPDa1zWWBLKN4nPt4524YvA/view?usp=sharing').read()
     model = pickle.load(file)
     file.close()
     q = request.args.get('q')
