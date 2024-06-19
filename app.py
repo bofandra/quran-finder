@@ -16,7 +16,7 @@ def hello_world():
 @app.route('/find')
 def find():
     # transform query from user
-    file = urllib.request.urlopen('https://drive.google.com/file/d/1K8vDPAn_xtPDa1zWWBLKN4nPt4524YvA/view?usp=sharing').read()
+    file = open('ms-marco-TinyBERT-L-2.sav','rb')
     model = pickle.load(file)
     file.close()
     q = request.args.get('q')
@@ -24,7 +24,7 @@ def find():
     print(q)
 
     # get encoded quran text
-    file = open('encoded_quran_cmlm.sav','rb')
+    file = open('encoded_quran_ms-marco-TinyBERT-L-2.sav','rb')
     encoded_quran_text = pickle.load(file)
     file.close()
 
